@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voorbeeldpagina – Samenwerking Voetbalverenigingen Soest</title>
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../components/bundle.css">
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="../components/bundle.js"></script>
+<style>
+  main section:nth-child(even) { background: var(--surface-alt); }
+  .wrap { max-width: var(--container-max); margin: 0 auto; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var S = window.SVS, h = React.createElement;
+  var logo = '../assets/Logos/logo-svs.svg', mark = '../assets/Logos/beeldmerk-handdruk.svg';
+  var vvz = '../assets/Clubs/vvz49.png', so = '../assets/Clubs/so-soest.png';
+  function Section(title, label, children) {
+    return h('section', null, h('div', { className: 'wrap' }, h(S.SectionHeading, { label: label, title: title }), h('div', { className: 'svs-grid' }, children)));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(S.SiteHeader, { logoSrc: logo, homeHref: '#', cta: { label: 'Word lid', href: '#' },
+      items: [{ label: 'Nieuws', href: '#', active: true }, { label: 'Programma', href: '#' }, { label: 'Teams', href: '#' }, { label: 'Over ons', href: '#' }, { label: 'Contact', href: '#' }] }),
+    h('main', null,
+      h(S.Hero, { label: 'VVZ\u201949 \u00d7 So Soest', title: '[Kop van de homepage]', intro: '[Eén of twee zinnen over de samenwerking.]', markSrc: mark,
+        actions: h(React.Fragment, null, h(S.Button, { href: '#' }, 'Over de samenwerking'), h(S.Button, { variant: 'quiet', href: '#' }, 'Nieuws')) }),
+      Section('Komende wedstrijden', 'Programma', [
+        h(S.MatchCard, { key: 1, category: '[Team]', date: '[Datum]', time: '[Tijd]', home: { name: 'VVZ\u201949', logo: vvz }, away: { name: 'So Soest', logo: so }, location: '[Sportpark]' }),
+        h(S.MatchCard, { key: 2, category: '[Team]', status: 'gespeeld', score: [0, 0], home: { name: 'So Soest', logo: so }, away: { name: '[Tegenstander]' }, location: '[Sportpark]' })]),
+      Section('Laatste nieuws', 'Nieuws', [
+        h(S.NewsCard, { key: 1, label: 'Jeugd', title: '[Titel nieuwsbericht]', excerpt: '[Korte samenvatting]', date: '[Datum]', href: '#' }),
+        h(S.NewsCard, { key: 2, label: 'Clubnieuws', tone: 'blauw', title: '[Titel nieuwsbericht]', date: '[Datum]', href: '#' })])),
+    h(S.SiteFooter, { logoSrc: logo, note: 'Samenwerking Voetbalverenigingen Soest is een samenwerking tussen VVZ\u201949 en So Soest.',
+      clubs: [{ name: 'VVZ\u201949', href: '#', logoSrc: '../assets/Clubs/vvz49-wit.svg' }, { name: 'So Soest', href: '#', logoSrc: '../assets/Clubs/so-soest-wit.svg' }] })));
+</script>
+</body>
+</html>
