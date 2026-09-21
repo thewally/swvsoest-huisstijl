@@ -17,6 +17,7 @@ Samenwerking Voetbalverenigingen Soest (SVS) is de samenwerking tussen de Soeste
 - Vrije ruimte: houd rondom het schild minstens de hoogte van het SOEST-lint leeg.
 - Minimaal formaat: 64px breed op scherm, 20mm breed in druk. Daaronder gebruik je `beeldmerk-handdruk.svg`.
 - Het logo staat het best op `surface` (wit) of `surface-alt`. Op een foto zet je het alleen op een rustig, egaal deel.
+- Onder de handdruk staan vijf witte sterren op een rij, twee op het groen, één op de naad en twee op het blauw. Ze horen bij het logo; laat ze nooit weg en gebruik ze niet los als decoratie.
 - De clublogo's in het schild zijn wit en laten de achtergrondkleur zien. Dat hoort altijd zo: VVZ'49 op het groen, So Soest op het blauw.
 
 ## Kleur
